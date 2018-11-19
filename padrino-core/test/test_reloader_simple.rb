@@ -76,6 +76,7 @@ describe "SimpleReloader" do
       @app = SimpleDemo
       get "/"
       @app.reload!
+      AModelWithNoDependOnLib.hello
       get "/rand"
       assert ok?
       last_body = body
